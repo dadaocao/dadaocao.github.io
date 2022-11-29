@@ -8,14 +8,17 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Cha3-Hashmap-I | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="Cha3 Hashmap-IHashmap理论基础建议： 了解哈希表的内部实现原理，哈希函数，哈希碰撞，以及常见哈希表的区别，数组，set 和map。   什么时候想到用哈希法，当我们遇到了要快速判断一个元素是否出现集合里的时候，就要考虑哈希法。 这句话很重要，做哈希表题目都要思考这句话。  文章讲解 Leetcode Task242. 有效的字母异位词建议： 这道题目，大家可以感受到 数组 用来">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Cha3-Hashmap-I">
 <meta property="og:url" content="http://example.com/2022/11/29/Cha3-Hashmap-I/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Cha3 Hashmap-IHashmap理论基础建议： 了解哈希表的内部实现原理，哈希函数，哈希碰撞，以及常见哈希表的区别，数组，set 和map。   什么时候想到用哈希法，当我们遇到了要快速判断一个元素是否出现集合里的时候，就要考虑哈希法。 这句话很重要，做哈希表题目都要思考这句话。  文章讲解 Leetcode Task242. 有效的字母异位词建议： 这道题目，大家可以感受到 数组 用来">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-29T21:50:22.000Z">
-<meta property="article:modified_time" content="2022-11-29T21:50:22.883Z">
+<meta property="article:modified_time" content="2022-11-29T22:30:50.628Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Hashmap leetcode">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -172,7 +175,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Cha3-Hashmap-I"><a href="#Cha3-Hashmap-I" class="headerlink" title="Cha3 Hashmap-I"></a>Cha3 Hashmap-I</h1><h2 id="Hashmap理论基础"><a href="#Hashmap理论基础" class="headerlink" title="Hashmap理论基础"></a>Hashmap理论基础</h2><p>建议： 了解哈希表的内部实现原理，哈希函数，哈希碰撞，以及常见哈希表的区别，数组，set 和map。  </p>
+<p>什么时候想到用哈希法，<strong>当我们遇到了要快速判断一个元素是否出现集合里的时候</strong>，就要考虑哈希法。</p>
+<p>这句话很重要，做哈希表题目都要思考这句话。 </p>
+<p><a target="_blank" rel="noopener" href="https://programmercarl.com/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html">文章讲解</a></p>
+<h2 id="Leetcode-Task"><a href="#Leetcode-Task" class="headerlink" title="Leetcode Task"></a>Leetcode Task</h2><h3 id="242-有效的字母异位词"><a href="#242-有效的字母异位词" class="headerlink" title="242. 有效的字母异位词"></a>242. 有效的字母异位词</h3><p>建议： 这道题目，大家可以感受到 数组 用来做哈希表 给我们带来的遍历之处。 </p>
+<p><a target="_blank" rel="noopener" href="https://programmercarl.com/0242.%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D.html">题目链接&#x2F;文章讲解&#x2F;视频讲解</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="349-两个数组的交集"><a href="#349-两个数组的交集" class="headerlink" title="349. 两个数组的交集"></a>349. 两个数组的交集</h3><p>建议：本题就开始考虑 什么时候用set 什么时候用数组，本题其实是使用set的好题，但是后来力扣改了题目描述和 测试用例，添加了 0 &lt;&#x3D; nums1[i], nums2[i] &lt;&#x3D; 1000 条件，所以使用数组也可以了，不过建议大家忽略这个条件。 尝试去使用set。 </p>
+<p><a target="_blank" rel="noopener" href="https://programmercarl.com/0349.%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86.html">题目链接&#x2F;文章讲解&#x2F;视频讲解</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="202-快乐数"><a href="#202-快乐数" class="headerlink" title="202. 快乐数"></a>202. 快乐数</h3><p>建议：这道题目也是set的应用，其实和上一题差不多，就是 套在快乐数一个壳子 </p>
+<p><a target="_blank" rel="noopener" href="https://programmercarl.com/0202.%E5%BF%AB%E4%B9%90%E6%95%B0.html">题目链接&#x2F;文章讲解</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-两数之和"><a href="#1-两数之和" class="headerlink" title="1.两数之和"></a>1.两数之和</h3><p>建议：本题虽然是 力扣第一题，但是还是挺难的，也是数组 &amp; set之后，使用map解决哈希问题的第一题。 </p>
+<p>建议大家先看视频讲解，然后尝试自己写代码，在看文章讲解，加深印象。 </p>
+<p><a target="_blank" rel="noopener" href="https://programmercarl.com/0001.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C.html">题目链接&#x2F;文章讲解&#x2F;视频讲解</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
       
 
       
@@ -201,6 +233,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hashmap leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -402,7 +445,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">LinkedList leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Array leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Hashmap leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">String leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
