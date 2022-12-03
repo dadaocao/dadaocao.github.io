@@ -188,9 +188,10 @@
 <h3 id="704-二分查找"><a href="#704-二分查找" class="headerlink" title="704 二分查找"></a>704 二分查找</h3><p>704必须掌握<br>先把 704写熟练，要熟悉 根据 左闭右开，左闭右闭 两种区间规则 写出来的二分法</p>
 <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-search/">题目链接</a></p>
 <p>python:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def search(self, nums: List[int], target: int) -&gt; int:</span><br><span class="line">        left, right = 0, len(nums) - 1</span><br><span class="line">        while left &lt;= right:</span><br><span class="line">            mid = (right - left) // 2 + left</span><br><span class="line">            num = nums[mid]</span><br><span class="line">            if num == target:</span><br><span class="line">                return mid</span><br><span class="line">            elif num &gt; target:</span><br><span class="line">                right = mid - 1</span><br><span class="line">            else:</span><br><span class="line">                left = mid + 1</span><br><span class="line">        return -1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#（版本一）左闭右闭区间</span><br><span class="line"></span><br><span class="line">class Solution:</span><br><span class="line">    def search(self, nums: List[int], target: int) -&gt; int: # 冒号后面的和右箭头后面的都是指示数据类型的，不用管</span><br><span class="line">        left, right = 0, len(nums) - 1  # 给左右边界赋值：定义target在左闭右闭的区间里，[left, right]</span><br><span class="line">        </span><br><span class="line">        while left &lt;= right:  #左闭右闭，所以就算l=r也是有意义的，无非就是muns只有一个元素的极端情况————[1,1]有意义但是[1,1)就不对了</span><br><span class="line">            middle = (left + right) // 2 #这个还有防止溢出的写法：middle = left + ((right - left) / 2);防止溢出 等同于(left + right)/2</span><br><span class="line"></span><br><span class="line">            if nums[middle] &lt; target:  #如果middle小于目标，说明目标在左区间，更新[l,r]区间,需要将左边界推进，将区间收窄（二分）一半，也即将左边界推进到middle的右边————[middle+1, right]</span><br><span class="line">                left = middle + 1</span><br><span class="line">            elif nums[middle] &gt; target: #如果middle大于目标，说明目标在左边区间，更新[l,r]区间,需要将右边界收窄一半，也即收窄到middle的右边————[left, middle - 1]</span><br><span class="line">                right = middle - 1</span><br><span class="line">            else: # nums[middle] == target</span><br><span class="line">                return middle #数组中找到目标值，直接返回下标</span><br><span class="line">        return -1 # 未找到目标值</span><br></pre></td></tr></table></figure>
 
-<p>复杂度分析<br>时间复杂度：O(log n)，其中 n 是数组的长度。<br>空间复杂度：O(1)。</p>
+<p>复杂度分析 嘻嘻不会</p>
+<p>时间复杂度：O(log n)，其中 n 是数组的长度。<br>空间复杂度：O(1)。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p><a target="_blank" rel="noopener" href="https://programmercarl.com/0704.%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE.html">文章讲解</a></p>
@@ -205,6 +206,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h3 id="27-移除元素"><a href="#27-移除元素" class="headerlink" title="27 移除元素"></a>27 移除元素</h3><p>暴力的解法，可以锻炼一下我们的代码实现能力，建议先把暴力写法写一遍。<br>双指针法 是本题的精髓，今日需要掌握，至于拓展题目可以先不看。</p>
+<p><a target="_blank" rel="noopener" href="https://programmercarl.com/0027.%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0.html#_27-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0">https://programmercarl.com/0027.%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0.html#_27-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0</a></p>
 <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-element/">题目链接</a></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def removeElement(self, nums: List[int], val: int) -&gt; int:</span><br><span class="line">        while 1:</span><br><span class="line">            try:</span><br><span class="line">                nums.remove(val)</span><br><span class="line">            except:</span><br><span class="line">                return len(nums)</span><br><span class="line"></span><br><span class="line">作者：gezixi-plus</span><br><span class="line">链接：https://leetcode.cn/problems/remove-element/solution/-by-gezixi-plus-pnwg/</span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -437,14 +439,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">leetcode Array</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Array leetcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">LinkedList leetcode</a>
               </li>
              
@@ -462,6 +456,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Array leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">leetcode Array</a>
               </li>
             
             <div class="clearfix"></div>
